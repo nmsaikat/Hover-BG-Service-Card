@@ -1,0 +1,134 @@
+/* Google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+:root {
+  --primary-color: #24b454;
+  --secondary-color: rgba(255, 255, 255, 0.4);
+}
+
+#service-section {
+  height: 100vh;
+  width: 100%;
+  background-color: #20223a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#service-section h1 {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+#service-section h1::after {
+  content: "";
+  position: absolute;
+  border-left: 20px solid var(--primary-color);
+  top: 8px;
+  left: -30px;
+  height: 0;
+  width: 0;
+  border-top: 20px solid transparent;
+}
+
+#service-section h1::before {
+  content: "";
+  position: absolute;
+  border-right: 20px solid var(--primary-color);
+  top: 8px;
+  right: -30px;
+  height: 0;
+  width: 0;
+  border-top: 20px solid transparent;
+}
+
+#service-section #peragraph {
+  width: 30%;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #fff;
+  text-align: center;
+  line-height: 1.5rem;
+  white-space: 1px;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  z-index: 9;
+  margin-top: 40px;
+}
+
+.cards .card {
+  width: 480px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: 8%;
+  background-color: rgb(65, 62, 105);
+  position: relative;
+  border-radius: 10px;
+}
+
+.cards .card::before {
+  position: absolute;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+  background-color: var(--primary-color);
+  transform: rotate(0deg);
+  transition: 0.5s;
+  z-index: -1;
+}
+
+.cards .card:hover.card::before {
+  transform: rotate(10deg);
+}
+
+.cards .card i {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.cards .card h2 {
+  font-size: 1.8rem;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.cards .card p {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+@media (max-width: 1100px) {
+  #service-section h1 {
+    font-size: 1rem;
+  }
+
+  .cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  #service-section #peragraph {
+    width: 80%;
+  }
+}
